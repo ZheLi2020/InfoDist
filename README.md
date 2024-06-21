@@ -1,6 +1,6 @@
 # Image Distillation for Safe Data Sharing in Histopathology
 
-This repository provides a PyTorch implementation of the paper [Image Distillation for Safe Data Sharing in Histopathology.](https://arxiv.org/abs/2406.13536) accepted at MICCAI 2024.
+This repository provides a PyTorch implementation of the paper [Image Distillation for Safe Data Sharing in Histopathology](https://arxiv.org/abs/2406.13536) accepted at MICCAI 2024.
 
 Tested with:
 
