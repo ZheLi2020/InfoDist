@@ -11,7 +11,7 @@ Tested with:
 
 * Pre-trained classifiers for embedding can be downloaded ([here](https://drive.google.com/drive/folders/15xvSnOT8FHEVO4Yd9k9-oEhKAOz6NFJy?usp=sharing))
 
-* To distill the small dataset and train classifier for image size 256, run 
+* To distill the small dataset and train classifier on images with size 256, run 
   
   ```
   # run with contrastive loss
@@ -21,7 +21,7 @@ Tested with:
   python main.py --dataset=medsyn --cluster=embedinfo
   ```
 
-* To distill the small dataset and train classifier for image size 64, run 
+* To distill the small dataset and train classifier on images with size 64, run 
   
   ```
   # run with contrastive loss
