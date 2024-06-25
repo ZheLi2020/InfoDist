@@ -13,7 +13,7 @@ Tested with:
 
 * To distill the small dataset and train classifier for image size 256, run 
   
-  ```# run with contrastive loss
+  ``` \#run with contrastive loss
   python main_bound.py --dataset=medsyn --cluster=embedinfo --contrastive
   ```
 
