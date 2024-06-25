@@ -16,12 +16,19 @@ Tested with:
   ```
   # run with contrastive loss
   python main_bound.py --dataset=medsyn --cluster=embedinfo --contrastive
+
+  # run only with ce loss
+  python main.py --dataset=medsyn --cluster=embedinfo
   ```
 
 * To distill the small dataset and train classifier for image size 64, run 
   
-  ```# run with contrastive loss
-  python main_small.py --dataset=medsyn --cluster=embedinfo --contrastive
+  ```
+  # run with contrastive loss
+  python main_smallbound.py --dataset=medsyn --cluster=embedinfo --contrastive
+
+  # run only with ce loss
+  python main_small.py --dataset=medsyn --cluster=embedinfo
   ```
 
 
