@@ -89,17 +89,6 @@ def train_loop(images_all=None, labels_all=None, indices_class=None, testloader=
         used_model = time.strftime("%H:%M:%S", time.gmtime(end_model - start_model))
         logging.info(f'The passed time of training model {model_eval} is {used_model}')
 
-    wandb.log({
-        'Accuracy/Avg_All'.format(model_eval): np.mean(np.array(list(curr_acc_dict.values()))),
-        'Std/Avg_All'.format(model_eval): np.mean(np.array(list(curr_std_dict.values())))})
-
-    curr_acc_dict.pop("{}".format(args.model))
-    curr_std_dict.pop("{}".format(args.model))
-
-    wandb.log({
-        'Accuracy/Avg_Cross'.format(model_eval): np.mean(np.array(list(curr_acc_dict.values()))),
-        'Std/Avg_Cross'.format(model_eval): np.mean(np.array(list(curr_std_dict.values())))})
-
 
 def main(args):
     torch.random.manual_seed(0)

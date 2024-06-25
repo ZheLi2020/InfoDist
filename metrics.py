@@ -1,29 +1,8 @@
-import torch
-import torch.nn as nn
+
 import numpy as np
 from sklearn.preprocessing import label_binarize
 from sklearn.metrics import roc_auc_score, roc_curve, precision_recall_fscore_support
 from sklearn.metrics import auc as calc_auc
-
-# from torchmetrics import MetricCollection
-# from torchmetrics.classification import MulticlassAUROC, MulticlassRecall, MulticlassPrecision, MulticlassF1Score,
-# from torcheval.metrics import MulticlassF1Score
-# from torcheval.metrics.functional import multiclass_auroc, multiclass_f1_score, multiclass_precision
-# from torcheval.metrics.functional.classification import multiclass_recall
-
-
-def calculate_metrics(pred_list, label_list, num_classes):
-    pred_list = torch.cat(pred_list, dim=0)
-    label_list = torch.cat(label_list, dim=0)
-    pred_prob = pred_list.softmax(dim=-1)
-
-    auc_score = multiclass_auroc(pred_prob, label_list, num_classes=num_classes)
-
-    fscore = multiclass_f1_score(pred_prob, label_list, num_classes=num_classes)
-    precision = multiclass_precision(pred_prob, label_list)
-    recall = multiclass_recall(pred_prob, label_list)
-
-    return auc_score, fscore
 
 
 def calculate_auc_and_fscore(label_pred_list, prob_list, label_true_list, num_classes):

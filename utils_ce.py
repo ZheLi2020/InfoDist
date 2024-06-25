@@ -268,14 +268,10 @@ def train_synset(it_run, net, images_train, labels_train, testloader, args, deca
 
 
 def get_eval_pool(eval_mode, model, model_eval):
-    if eval_mode == 'M': # multiple architectures
+    if eval_mode == 'M':  # multiple architectures
         model_eval_pool = [model, "ResNet18"]
-    elif eval_mode == 'R': # multiple architectures
-        model_eval_pool = [model, "ConvNet", "VGG11", "AlexNet", "ViT"]
-    elif eval_mode == "big":
-        model_eval_pool = [model, "RN18", "VGG11_big", "ViT"]
-    elif eval_mode == "small":
-        model_eval_pool = [model, "ResNet18", "VGG11", "LeNet", "AlexNet"]
+    elif eval_mode == 'R':  # multiple architectures
+        model_eval_pool = [model, "ResNet18", "VGG11", "AlexNet", "ViT"]
     else:
         model_eval_pool = [model_eval]
     return model_eval_pool

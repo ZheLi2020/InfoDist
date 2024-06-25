@@ -106,11 +106,6 @@ class TensorDataset(Dataset):
         return self.images.shape[0]
 
 
-def get_default_convnet_setting():
-    net_width, net_depth, net_act, net_norm, net_pooling = 128, 3, 'relu', 'instancenorm', 'avgpooling'
-    return net_width, net_depth, net_act, net_norm, net_pooling
-
-
 def get_network(model, channel, num_classes, im_size=(32, 32), depth=3, width=128, norm="instancenorm", args=None):
     torch.random.manual_seed(int(time.time() * 1000) % 100000)
 
@@ -121,17 +116,8 @@ def get_network(model, channel, num_classes, im_size=(32, 32), depth=3, width=12
     elif model == 'ResNet18':
         net = ResNet18(channel=channel, num_classes=num_classes, norm=norm)
     elif model == "ViT":
-        net = ViT(
-            image_size = im_size,
-            patch_size = 16,
-            num_classes = num_classes,
-            dim = 512,
-            depth = 10,
-            heads = 8,
-            mlp_dim = 512,
-            dropout = 0.1,
-            emb_dropout = 0.1,
-        )
+        net = ViT(image_size=im_size, patch_size=16, num_classes=num_classes, dim=512, depth=10,
+                  heads=8, mlp_dim=512, dropout=0.1, emb_dropout=0.1,)
 
     elif model == "ConvNet":
         net = ConvNet(channel, num_classes, net_width=width, net_depth=depth, net_act='relu', net_norm=norm, im_size=im_size)
@@ -339,14 +325,10 @@ def train_synset(it_run, net, images_train, labels_train, testloader, args, deca
 
 
 def get_eval_pool(eval_mode, model, model_eval):
-    if eval_mode == 'M': # multiple architectures
+    if eval_mode == 'M':  # multiple architectures
         model_eval_pool = [model, "ResNet18"]
-    elif eval_mode == 'R': # multiple architectures
-        model_eval_pool = [model, "ConvNet", "VGG11", "AlexNet", "ViT"]
-    elif eval_mode == "big":
-        model_eval_pool = [model, "RN18", "VGG11_big", "ViT"]
-    elif eval_mode == "small":
-        model_eval_pool = [model, "ResNet18", "VGG11", "LeNet", "AlexNet"]
+    elif eval_mode == 'R':  # multiple architectures
+        model_eval_pool = [model, "ResNet18", "VGG11", "AlexNet", "ViT"]
     else:
         model_eval_pool = [model_eval]
     return model_eval_pool
