@@ -45,6 +45,9 @@ If you use the code, please cite
     
 ### Acknowledgements:
 
-    (Some) HPC resources were provided by the Erlangen National High Performance Computing Center (NHR@FAU) of the Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) under the NHR projects b143dc and b180dc. NHR funding is provided by federal and Bavarian state authorities. NHR@FAU hardware is partially funded by the German Research Foundation (DFG) – 440719683.
+    (Some) HPC resources were provided by the Erlangen National High Performance Computing Center (NHR@FAU) 
+    of the Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) under the NHR projects b143dc and b180dc. 
+    NHR funding is provided by federal and Bavarian state authorities. NHR@FAU hardware is partially funded 
+    by the German Research Foundation (DFG) – 440719683.
 
     
